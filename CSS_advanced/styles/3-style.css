@@ -2,7 +2,7 @@ html {
     scroll-behavior: smooth
 }
 body {
-    color: var(--text-color)
+    color: #161616;
 }
 a {
     color: var(--text-color)
