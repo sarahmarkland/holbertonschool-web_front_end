@@ -9,7 +9,10 @@
 html {
     scroll-behavior: smooth;
 }
-body, a {
+body {
+    color: #161616
+}
+a {
     color: var(--text-color);
 }
 .visually-hidden {
