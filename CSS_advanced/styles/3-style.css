@@ -10,10 +10,10 @@ a {
 .visually-hidden {
     display: none
 }
-.section-tagline {
+.card-category {
     color: var(--color-primary)
 }
-.card-category {
+.section-tagline {
     color: var(--color-primary)
 }
 :root {
