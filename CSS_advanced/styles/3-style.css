@@ -18,6 +18,9 @@ a {
 .visually-hidden {
     display: none;
 }
-.section-tagline, .card-category {
+.section-tagline {
+    color: var(--color-primary);
+}
+.card-category {
     color: var(--color-primary);
 }
