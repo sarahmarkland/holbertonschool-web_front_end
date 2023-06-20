@@ -427,8 +427,8 @@ a:active {
     color: var(--color-primary);
 }
 
-.card-services .card-category {
-    margin: none;
+.card-services .card-title {
+    margin: 0;
 }
 
 .card-services .a {
