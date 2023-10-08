@@ -1,0 +1,16 @@
+/* same as task 1, but add 6d6d6d to body and h2 */
+$text-color: #3D3D3D;
+$base-background: #6d6d6d;
+
+body {
+    color: $text-color;
+    background-color: $base-background;
+}
+
+p {
+    color: $text-color;
+}
+
+h2 {
+    background-color: $base-background;
+}
