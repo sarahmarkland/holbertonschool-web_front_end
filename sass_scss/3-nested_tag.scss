@@ -1,0 +1,9 @@
+/* No margin/padding in body; Margin 10px to p tags inside body */
+
+body {
+    margin: 0px;
+    padding: 0px;
+    p {
+        margin: 10px;
+    }
+}
