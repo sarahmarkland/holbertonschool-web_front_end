@@ -25,6 +25,6 @@ let classRoom = createClassRoom(10);
 
 // console.log("Seat numbers of students in class:", classRoom);
 
-console.log(classRoom[0]());
-console.log(classRoom[3]());
-console.log(classRoom[9]());
+// console.log(classRoom[0]());
+// console.log(classRoom[3]());
+// console.log(classRoom[9]());
