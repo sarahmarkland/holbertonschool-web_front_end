@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 5</title>
+</head>
+<body>
+	<script>
+		if (typeof(Storage) !== "undefined") {
+			var availableItems = ["Shampoo", "Soap", "Sponge", "Water"];
+			createStore();
+			displayCart();
+		} else {
+			alert("Sorry, your browser does not support Web storage. Try again with a better one");
+		}
+
+		function createStore() {
+			console.log("Store created!");
+		}
+		
+		function displayCart() {
+			console.log("Cart displayed!");
+		}
+
+		function addItemToCart(item) {
+			localStorage.setItem(item, true);
+			displayCart();
+		}
+
+		function createStore() {
+			var body = document.body;
+			var ul = document.createElement('ul');
+			body.appendChild(ul);
+			// Loop through the array of available items
+			for (var i = 0; i < availableItems.length; i++) {
+			  // Create a list item for each item
+			  var li = document.createElement('li');
+		  
+			  // Set the text content of the list item to the name of the available product
+			  li.textContent = availableItems[i];
+		  
+			  li.addEventListener('click', function(event) {
+				// Call the addItemToCart function with the name of the clicked product
+				addItemToCart(event.target.textContent);
+			  });
+			  ul.appendChild(li);
+			}
+		  }
+
+		  function displayCart() {
+			var body = document.body;
+			var ul = document.createElement('ul');
+			body.appendChild(ul);
+			// Loop through the localStorage object
+			for (var i = 0; i < localStorage.length; i++) {
+			  // Create a list item for each item
+			  var li = document.createElement('li');
+		  
+			  // Set the text content of the list item to the name of the available product
+			  li.textContent = localStorage.key(i);
+		  
+			  ul.appendChild(li);
+			}
+		  }
+	</script>
+</body>
+</html>
