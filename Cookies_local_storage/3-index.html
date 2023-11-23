@@ -4,13 +4,15 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Task 2</title>
+	<title>Task 3</title>
 </head>
 <body>
-	<h1>Login to the Website</h1>
-	<input type="text" id="firstname" />
-	<input type="text" id="email" />
-	<button onclick="setCookies()">Log me in</button>
+	<div id='form-container' style='display: none;'>
+		<h1>Login to the Website</h1>
+		<input type="text" id="firstname" placeholder="firstname"/>
+		<input type="text" id="email" placeholder="email"/>
+		<button onclick="setCookies()">Log me in</button>
+	</div>
 
 	<h1>Cookies</h1>
 	<button onclick="showCookies()">Show the cookies</button>
@@ -23,6 +25,7 @@
 			const exp = new Date();
 			exp.setTime(exp.getTime() + (10 * 24 * 60 * 60 * 1000)); // 10 days
 			document.cookie = `expires=${exp.toUTCString()}`;
+			
 		}
 		
 		function showCookies() {
@@ -38,6 +41,37 @@
 			const parts = value.split(`; ${name}=`);
 			if (parts.length === 2) return parts.pop().split(';').shift();
 		}
+
+		function hideForm() {
+			document.querySelector('#form-container').style.display = 'none';
+		}
+
+		function showForm() {
+			document.querySelector('#form-container').style.display = 'block';
+		}
+
+		function deleteCookiesAndShowForm() {
+			document.cookie = 'firstname=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+			document.cookie = 'email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+			showForm();
+		}
+
+		function showWelcomeMessageOrForm() {
+			const email = getCookie('email');
+			const firstname = getCookie('firstname');
+			if (email && firstname) {
+				hideForm();
+				const p = document.createElement('p');
+				p.innerHTML = `Welcome ${firstname} (${email})`;
+				document.body.appendChild(p);
+			} else {
+				showForm();
+			}
+		}
+
+		showWelcomeMessageOrForm();
+
 	</script>
 </body>
 </html>
+
